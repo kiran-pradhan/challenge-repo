@@ -1,0 +1,10 @@
+Challenge 2
+-----------
+
+Query to retrieve meta-data from a VM in Azure.
+
+We can leverage the Azure instance Meta-data Service (AIMS) by making a RESTAPI Call to the service from within the running VM/VM scale set in order to get the detailed meta-data in JSON format.
+
+Step 1:Make sure VM is not in stopped/de-allocated state.
+Step 2: SSH to your Host.
+Step 3:Execute the script:curl -s -H Metadata:true --noproxy "*" "http://169.254.169.254/metadata/instance?api-version=2021-02-01" | jq

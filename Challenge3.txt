@@ -1,0 +1,17 @@
+Challenge 3
+------------
+object="{a:{b:{c:d}}}"
+key="a/b/c"
+arrkey=(`echo $key | tr '/' ' '`)
+for i in "${arrkey[@]}"
+do
+    tmp="${object%%${i}*}"
+    echo ${#tmp}
+    index=${#tmp}+2
+    object=${object:${index}}
+    echo $object
+    subStr1=${object:0:${#subStr}-1}
+    echo $subStr1
+    object=$subStr1
+done
+
